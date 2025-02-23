@@ -8,28 +8,28 @@ public interface IUserService {
 
     /**
      * insert user
-     * @param user
+     * @param user 需要添加的用户对象
+     * @return 添加好的用户对象
      */
-    User add(UserDTO user);
+    User addUser(UserDTO user);
 
     /**
      * search user
-     * @param userId
-     * @return
+     * @param userId 需要查询的ID
+     * @return 查到的的用户对象
      */
     User getUser(Integer userId);
 
     /**
      * modify user
-     * @param user
-     * @return
+     * @param user 需要修改的用户对象
+     * @return 修改后的用户对象
      */
     User editUser(UserDTO user);
 
     /**
      * delete user
-     * @param userId
-     * @return
+     * @param userId 需要删除的ID
      */
     void deleteUser(Integer userId);
 }

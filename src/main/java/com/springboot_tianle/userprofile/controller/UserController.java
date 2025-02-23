@@ -4,7 +4,6 @@ import com.springboot_tianle.userprofile.pojo.DTO.UserDTO;
 import com.springboot_tianle.userprofile.pojo.ResponseMessage;
 import com.springboot_tianle.userprofile.pojo.User;
 import com.springboot_tianle.userprofile.service.IUserService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +23,7 @@ public class UserController {
         //*传进来的参数，由于规范的关系，一般需要新建一个UserDTO类。因为传入的参数不一定是User类的全部属性。
         //*如果你使用了spring-boot-starter-validator的注解，你需要加上@Validated来让限制生效
         //@Requestbody代表传进来的会是一个json文本，这个注解会自动帮我们转成对象
-        User userNew = userService.add(user);
+        User userNew = userService.addUser(user);
         System.out.println("New user ID: " + userNew.getUserId()); // 检查 ID 是否生成
         return ResponseMessage.success(userNew);
     }

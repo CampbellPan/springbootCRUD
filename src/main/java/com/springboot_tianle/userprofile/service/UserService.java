@@ -7,8 +7,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class UserService implements IUserService{
     //通常，一个业务逻辑类都需要新建一个接口，这样可维护性更强。
@@ -17,7 +15,7 @@ public class UserService implements IUserService{
     UserRepository userRepository;
 
     @Override
-    public User add(UserDTO user) {
+    public User addUser(UserDTO user) {
         //调用数据访问类（repository）的方法
 
         User userPojo = new User();
